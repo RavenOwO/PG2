@@ -1,7 +1,5 @@
 package Week4;
 
-import java.util.Arrays;
-
 public class Song {
 
     private String title = "";

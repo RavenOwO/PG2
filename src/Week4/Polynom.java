@@ -11,27 +11,27 @@ public class Polynom {
 
     //b)
     public int getGrad() {
-        return factors.length;
+        return factors.length - 1;
     }
 
     //c)
     public String toString() {
-        StringBuilder polyToStringBuilder = new StringBuilder();
+        StringBuilder strBuilder = new StringBuilder();
         for (int i = 0; i < factors.length; i++) {
             if (Math.signum(factors[i]) == 1 || Math.signum(factors[i]) == 0) {
-                polyToStringBuilder.append("+");
+                strBuilder.append("+");
             }
 
             if ((factors.length - (i + 1)) > 1) {
-                polyToStringBuilder.append(factors[i]).append("x^").append(factors.length - (i + 1)).append(" ");
+                strBuilder.append(factors[i]).append("x^").append(factors.length - (i + 1)).append(" ");
             } else if ((factors.length - (i + 1) == 1)) {
-                polyToStringBuilder.append(factors[i]).append("x").append(" ");
+                strBuilder.append(factors[i]).append("x").append(" ");
             } else {
-                polyToStringBuilder.append(factors[i]).append(" ");
+                strBuilder.append(factors[i]).append(" ");
             }
         }
 
-        String polyToString = polyToStringBuilder.toString();
+        String polyToString = strBuilder.toString();
         polyToString = polyToString.substring(1, polyToString.length()-1);
         return "f(x) = " + polyToString;
     }
